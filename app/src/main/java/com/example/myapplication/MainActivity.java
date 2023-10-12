@@ -1,49 +1,53 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public void buttonClick(View view) {
+    public class RecycleViewBookAdapter extends RecyclerView.Adapter{
+        private List<Book> bookList;
+        public RecycleViewBookAdapter(List<Book> bookList) {
+            this.bookList = bookList;
+        }
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book, parent, false);
+            return new RecyclerView.ViewHolder(view){};
+        }
 
-        TextView textView1 = findViewById(R.id.textView2);
-        TextView textView2 = findViewById(R.id.textView3);
-        String text1 = textView1.getText().toString();
-        String text2 = textView2.getText().toString();
-        textView1.setText(text2);
-        textView2.setText(text1);
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            Book book = bookList.get(position);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("交换结果");
-        builder.setMessage("交换成功");
-        builder.setPositiveButton("OK", (dialog, which) -> Toast.makeText(MainActivity.this, "OK button clicked", Toast.LENGTH_SHORT).show());
-        builder.setNegativeButton("Cancel", (dialog, which) -> Toast.makeText(MainActivity.this, "Cancel button clicked", Toast.LENGTH_SHORT).show());
-        builder.show();
+            ImageView imageView = holder.itemView.findViewById(R.id.image_view_book_cover);
+            TextView textView = holder.itemView.findViewById(R.id.text_view_book_title);
+
+            imageView.setImageResource(book.getCoverResourceId());
+            textView.setText(book.getTitle());
+        }
+        @Override
+        public int getItemCount() {
+            return bookList.size();
+        }
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(R.string.hello_android);
-
-//        Button myButton = findViewById(R.id.button);
-//
-//        myButton.setOnClickListener(view -> {
-//            Toast.makeText(MainActivity.this, "交换成功", Toast.LENGTH_SHORT).show();
-//            TextView textView1 = findViewById(R.id.textView2);
-//            TextView textView2 = findViewById(R.id.textView3);
-//            String text1 = textView1.getText().toString();
-//            String text2 = textView2.getText().toString();
-//            textView1.setText(text2);
-//            textView2.setText(text1);
-//        });
+        RecyclerView recyclerView = findViewById(R.id.recycle_view_books);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecycleViewBookAdapter adapter = new RecycleViewBookAdapter(BookListMainActivity.getListBooks());
+        recyclerView.setAdapter(adapter);
     }
 }
