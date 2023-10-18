@@ -17,10 +17,9 @@ public class BookListMainActivity extends AppCompatActivity {
     public static List<Book> getListBooks() {
         List<Book> bookList = new ArrayList<>();
 
-        // Add book objects to the list
-        bookList.add(new Book(R.drawable.book1, "Android 移动应用基础教程 第二版"));
-        bookList.add(new Book(R.drawable.book2, "数据结构教程 第五版"));
-        bookList.add(new Book(R.drawable.book3, "计算机操作系统 第四版"));
+        bookList.add(new Book(R.drawable.book1, 25,"Android 移动应用基础教程 第二版"));
+        bookList.add(new Book(R.drawable.book2, 30,"数据结构教程 第五版"));
+        bookList.add(new Book(R.drawable.book3, 35,"计算机操作系统 第四版"));
 
         return bookList;
     }
