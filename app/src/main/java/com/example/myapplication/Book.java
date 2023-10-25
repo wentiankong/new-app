@@ -1,5 +1,8 @@
 package com.example.myapplication;
-public class Book {
+
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private int coverResourceId;
     private int price;
     private String title;
@@ -18,5 +21,8 @@ public class Book {
     }
     public String getTitle() {
         return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

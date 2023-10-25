@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">我的第一个APP</string>
-    <string name="TextView1">书本价格:</string>
-    <string name="TextView2">书本标题:</string>
-    <string name="buttonText">添加</string>
+    <string name="TextView_price">书本价格:</string>
+    <string name="TextView_title">书本标题:</string>
+    <string name="buttonText_add">添加</string>
+    <string name="buttonText_edit">修改</string>
 </resources>
