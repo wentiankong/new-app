@@ -4,4 +4,7 @@
     <string name="TextView_title">书本标题:</string>
     <string name="buttonText_add">添加</string>
     <string name="buttonText_edit">修改</string>
+    <string name="tab1">图书</string>
+    <string name="tab2">新闻</string>
+    <string name="tab3">地图</string>
 </resources>

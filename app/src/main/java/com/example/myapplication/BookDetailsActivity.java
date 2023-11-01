@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,8 +19,8 @@ public class BookDetailsActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.edit_book_details);
 
         Intent intent = new Intent();
-        String title = intent.getStringExtra("Title");
-        int requestCode = intent.getIntExtra("requestCode", 0);
+        String title = getIntent().getStringExtra("Title");
+        int requestCode = getIntent().getIntExtra("requestCode", 0);
 
         editText.setText(title);
 
