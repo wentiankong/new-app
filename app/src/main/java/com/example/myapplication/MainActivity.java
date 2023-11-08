@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return new BookViewFragment();
                 case 1:
-                case 2:
                     return new WebViewFragment();
+                case 2:
+                    return new MapViewFragment();
                 default:
                     return null;
             }
