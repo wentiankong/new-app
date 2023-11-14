@@ -30,17 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="FBPBZ-WMD6T-PZ5XR-LKUG6-NR3O5-VGBA4"/>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <meta-data
-        android:name="TencentMapSDK"
-        android:value="FBPBZ-WMD6T-PZ5XR-LKUG6-NR3O5-VGBA4"/>
 </manifest>
