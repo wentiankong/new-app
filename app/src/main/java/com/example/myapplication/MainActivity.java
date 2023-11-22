@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
     public class MyPagerAdapter extends FragmentStateAdapter {
-        private static final int NUM_TABS = 3;
+        private static final int NUM_TABS = 4;
         public MyPagerAdapter(FragmentManager fragmentManager, Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
                     return new WebViewFragment();
                 case 2:
                     return new MapViewFragment();
+                case 3:
+                    return new ClockFragment();
                 default:
                     return null;
             }
@@ -57,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 2:
                             tab.setText("地图");
+                            break;
+                        case 3:
+                            tab.setText("时钟");
                             break;
                     }
                 }

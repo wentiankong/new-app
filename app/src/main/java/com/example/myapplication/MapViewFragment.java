@@ -43,7 +43,8 @@ public class MapViewFragment extends Fragment {
         mapView = view.findViewById(R.id.map_view);
         TencentMap tencentMap = mapView.getMap();
 
-        new DataDownloadTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,"http://file.nidama.net/class/mobile_develop/data/bookstore.json");
+        new DataDownloadTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,
+                "http://file.nidama.net/class/mobile_develop/data/bookstore.json");
 
         LatLng point1 = new LatLng(22.252731, 113.535649);
         tencentMap.moveCamera(CameraUpdateFactory.newLatLng(point1));
