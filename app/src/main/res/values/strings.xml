@@ -7,4 +7,6 @@
     <string name="tab1">图书</string>
     <string name="tab2">新闻</string>
     <string name="tab3">地图</string>
+    <string name="init_bookCount">书本数量: 0</string>
+    <string name="resetButton">Reset</string>
 </resources>
