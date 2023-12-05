@@ -5,6 +5,12 @@ public class LocationMessage {
     private double latitude;
     private double longitude;
     private String memo;
+    public LocationMessage() {
+        this.name = "";
+        this.latitude = 0;
+        this.longitude = 0;
+        this.memo = "";
+    }
     public LocationMessage(String name, double latitude, double longitude, String memo) {
         this.name = name;
         this.latitude = latitude;
